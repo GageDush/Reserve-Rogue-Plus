@@ -2,15 +2,15 @@
 
 ## State as of 2026-10-08
 
-- Repository: `GageDush/Rogue-Plus` (public; privacy-source checks enabled)
+- Repository: `GageDush/Rogue-Plus` (private)
 - Baseline `main` GitHub Actions build: passed
 - `alpha/play-integration`: separate experimental branch, not production
-- Cloudflare Pages project `rogue-plus` created and connected to GitHub on 2026-10-08. Assigned site URL: https://rogue-plus.pages.dev/. First production deployment must be verified separately.
+- Cloudflare Pages project **not yet created** as of 2026-10-08 (API create returned authentication error 10000; connected Cloudflare reads succeed).
 - The original AppDeploy production URL remains unchanged.
 
 ## Initial Pages project
 
-Cloudflare Pages project `rogue-plus` is linked to the **GitHub** repository `GageDush/Rogue-Plus`. This table records the existing build configuration:
+In Cloudflare Workers & Pages, create a **Pages** project connected to the **GitHub** repository `GageDush/Rogue-Plus`.
 
 | Setting | Value |
 | --- | --- |
@@ -25,8 +25,9 @@ Cloudflare Pages project `rogue-plus` is linked to the **GitHub** repository `Ga
 | Build image | Current Pages standard build image |
 | Production custom domain | None until Pages preview is verified |
 
-Production is restricted to `main`, with automatic Git-based deployments enabled. The experimental Play branch is excluded from automatic deployments.
+If GitHub authorization is requested, grant the Cloudflare Workers & Pages GitHub App access to **only this repository**. Do not use a Direct Upload Pages project for the initial setup, since Direct Upload projects cannot be converted into Git-connected Pages projects.
 
+If Cloudflare ChatGPT connector writes are authorized in the future, project creation may be handled automatically. If API creation still returns error `10000`, review API/OAuth permissions needed for Cloudflare Pages Edit and GitHub app installation; do not share secrets in chat.
 
 ## Verification
 
